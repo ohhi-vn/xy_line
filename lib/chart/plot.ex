@@ -230,8 +230,9 @@ defmodule Contex.Plot do
       ~s|xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" |,
       ~s|viewBox="0 0 #{width} #{height}" role="img">|,
       get_default_style(plot),
-      get_titles_svg(plot, content_width),
-      get_axis_labels_svg(plot, content_width, content_height),
+      # TO-DO: Move to config
+      # get_titles_svg(plot, content_width),
+      # get_axis_labels_svg(plot, content_width, content_height),
       ~s|<g transform="translate(#{left},#{top})">|,
       PlotContent.to_svg(plot_content, plot.plot_options),
       "</g>",
